@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Net.Sendvia</RootNamespace>
     <AssemblyName>Net.Sendvia.Client</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>   
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,9 +37,6 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RestSharp">
-      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +67,9 @@
       <DependentUpon>Client.tt</DependentUpon>
     </Compile>
     <Compile Include="Dimension.cs">
+      <DependentUpon>Client.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuidArray.cs">
       <DependentUpon>Client.tt</DependentUpon>
     </Compile>
     <Compile Include="Markup.cs">
@@ -106,6 +107,9 @@
       <DependentUpon>Client.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
+      <DependentUpon>Client.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
       <DependentUpon>Client.tt</DependentUpon>
     </Compile>
     <Compile Include="Shipment.cs">
