@@ -23,7 +23,11 @@ namespace Net.Sendvia
             this.Authenticator = new OAuth2Authenticator(client_Id, client_secret);
         }
 	
-		public Area Area_ReadFromCountryISO(int countryIso)
+		
+	///<summary>
+	///Read country area
+	///</summary>
+	public Area Area_ReadFromCountryISO(int countryIso)
 		{
 			var request = new RestRequest("/areas", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddParameter("countryIso", countryIso.ToString());
@@ -31,7 +35,11 @@ namespace Net.Sendvia
 			return Execute<Area>(request).Data;
 		}
 
-		public List<Area> Area_Search(string search)
+		
+	///<summary>
+	///Search for areas
+	///</summary>
+	public List<Area> Area_Search(string search)
 		{
 			var request = new RestRequest("/areas", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddParameter("search", search.ToString());
@@ -39,7 +47,11 @@ namespace Net.Sendvia
 			return Execute<List<Area>>(request).Data;
 		}
 
-		public Area Area_ReadFromCountryISOWithFormat(int countryIso, string format)
+		
+	///<summary>
+	///Read Country Area
+	///</summary>
+	public Area Area_ReadFromCountryISOWithFormat(int countryIso, string format)
 		{
 			var request = new RestRequest("/areas", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddParameter("countryIso", countryIso.ToString());
@@ -48,7 +60,11 @@ namespace Net.Sendvia
 			return Execute<Area>(request).Data;
 		}
 
-		public string Area_Create(Area area)
+		
+	///<summary>
+	///Create area
+	///</summary>
+	public string Area_Create(Area area)
 		{
 			var request = new RestRequest("/areas", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(area);
@@ -56,7 +72,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Area_Delete(Guid id)
+		
+	///<summary>
+	///Delete area
+	///</summary>
+	public string Area_Delete(Guid id)
 		{
 			var request = new RestRequest("/areas/{id}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -64,7 +84,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Area Area_Read(Guid id)
+		
+	///<summary>
+	///Read area
+	///</summary>
+	public Area Area_Read(Guid id)
 		{
 			var request = new RestRequest("/areas/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -72,7 +96,11 @@ namespace Net.Sendvia
 			return Execute<Area>(request).Data;
 		}
 
-		public Area Area_ReadWithFormat(Guid id, string format)
+		
+	///<summary>
+	///Read area
+	///</summary>
+	public Area Area_ReadWithFormat(Guid id, string format)
 		{
 			var request = new RestRequest("/areas/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -81,7 +109,11 @@ namespace Net.Sendvia
 			return Execute<Area>(request).Data;
 		}
 
-		public string Area_Update(Guid id, Area area)
+		
+	///<summary>
+	///Update area
+	///</summary>
+	public string Area_Update(Guid id, Area area)
 		{
 			var request = new RestRequest("/areas/{id}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -90,7 +122,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Receipt Booking_Create(Booking booking)
+		
+	///<summary>
+	///Create booking
+	///</summary>
+	public Receipt Booking_Create(Booking booking)
 		{
 			var request = new RestRequest("/bookings", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(booking);
@@ -98,7 +134,11 @@ namespace Net.Sendvia
 			return Execute<Receipt>(request).Data;
 		}
 
-		public Receipt Booking_Get(Guid id)
+		
+	///<summary>
+	///Read booking reciept
+	///</summary>
+	public Receipt Booking_Get(Guid id)
 		{
 			var request = new RestRequest("/bookings/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -106,7 +146,11 @@ namespace Net.Sendvia
 			return Execute<Receipt>(request).Data;
 		}
 
-		public List<Carrier> Carrier_Read(bool? whitelist, string include)
+		
+	///<summary>
+	///Read carriers
+	///</summary>
+	public List<Carrier> Carrier_Read(bool? whitelist, string include)
 		{
 			var request = new RestRequest("/carriers", Method.GET){ RequestFormat = DataFormat.Json };
 			if(whitelist.HasValue)
@@ -118,7 +162,11 @@ namespace Net.Sendvia
 			return Execute<List<Carrier>>(request).Data;
 		}
 
-		public string Carrier_Create(Carrier carrier)
+		
+	///<summary>
+	///Create carrier
+	///</summary>
+	public string Carrier_Create(Carrier carrier)
 		{
 			var request = new RestRequest("/carriers", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(carrier);
@@ -126,7 +174,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Carrier_Delete(Guid id)
+		
+	///<summary>
+	///Delete carrier
+	///</summary>
+	public string Carrier_Delete(Guid id)
 		{
 			var request = new RestRequest("/carriers/{id}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -134,7 +186,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Carrier Carrier_Read(Guid id)
+		
+	///<summary>
+	///Read carrier
+	///</summary>
+	public Carrier Carrier_Read(Guid id)
 		{
 			var request = new RestRequest("/carriers/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -142,7 +198,11 @@ namespace Net.Sendvia
 			return Execute<Carrier>(request).Data;
 		}
 
-		public string Carrier_Update(Guid id, Carrier carrier)
+		
+	///<summary>
+	///Update carrier
+	///</summary>
+	public string Carrier_Update(Guid id, Carrier carrier)
 		{
 			var request = new RestRequest("/carriers/{id}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -151,7 +211,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Carrier_SetEndpoint(Guid id, Guid endpointId)
+		
+	///<summary>
+	///Set carrier endpoint
+	///</summary>
+	public string Carrier_SetEndpoint(Guid id, Guid endpointId)
 		{
 			var request = new RestRequest("/carriers/{id}/endpoint", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -160,7 +224,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Carrier_UpdateLogo(Guid id, string size, byte[] logo)
+		
+	///<summary>
+	///Update carrier logo
+	///</summary>
+	public string Carrier_UpdateLogo(Guid id, string size, byte[] logo)
 		{
 			var request = new RestRequest("/carriers/{id}/logos/{size}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -170,7 +238,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public List<Setting> Carrier_ReadSettings(Guid id)
+		
+	///<summary>
+	///
+	///</summary>
+	public List<Setting> Carrier_ReadSettings(Guid id)
 		{
 			var request = new RestRequest("/carriers/{id}/settings", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -178,7 +250,11 @@ namespace Net.Sendvia
 			return Execute<List<Setting>>(request).Data;
 		}
 
-		public void Carrier_PutSettings(Guid id, List<Setting> settings)
+		
+	///<summary>
+	///
+	///</summary>
+	public void Carrier_PutSettings(Guid id, List<Setting> settings)
 		{
 			var request = new RestRequest("/carriers/{id}/settings", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -187,7 +263,11 @@ namespace Net.Sendvia
 			Execute(request);
 		}
 
-		public string Carrier_DeleteSettings(Guid id, string key)
+		
+	///<summary>
+	///
+	///</summary>
+	public string Carrier_DeleteSettings(Guid id, string key)
 		{
 			var request = new RestRequest("/carriers/{id}/settings/{key}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -196,7 +276,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Carrier_RemoveFromWhitelist(List<Guid> ids)
+		
+	///<summary>
+	///Remove carriers from whitelist
+	///</summary>
+	public string Carrier_RemoveFromWhitelist(List<Guid> ids)
 		{
 			var request = new RestRequest("/carriers/whitelist", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddBody(ids);
@@ -204,7 +288,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Carrier_AddToWhitelist(List<Guid> ids)
+		
+	///<summary>
+	///Add carriers to whitelist
+	///</summary>
+	public string Carrier_AddToWhitelist(List<Guid> ids)
 		{
 			var request = new RestRequest("/carriers/whitelist", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(ids);
@@ -212,14 +300,22 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public List<Country> Country_Get()
+		
+	///<summary>
+	///Read countries
+	///</summary>
+	public List<Country> Country_Get()
 		{
 			var request = new RestRequest("/countries", Method.GET){ RequestFormat = DataFormat.Json };
 			
 			return Execute<List<Country>>(request).Data;
 		}
 
-		public List<Country> Country_Get(Guid serviceId)
+		
+	///<summary>
+	///Read countries by service
+	///</summary>
+	public List<Country> Country_Get(Guid serviceId)
 		{
 			var request = new RestRequest("/countries", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddParameter("serviceId", serviceId.ToString());
@@ -227,14 +323,22 @@ namespace Net.Sendvia
 			return Execute<List<Country>>(request).Data;
 		}
 
-		public List<Markup> Markup_Read()
+		
+	///<summary>
+	///Read all markups
+	///</summary>
+	public List<Markup> Markup_Read()
 		{
 			var request = new RestRequest("/markups", Method.GET){ RequestFormat = DataFormat.Json };
 			
 			return Execute<List<Markup>>(request).Data;
 		}
 
-		public string Markup_Create(Markup endpoint)
+		
+	///<summary>
+	///Create markup
+	///</summary>
+	public string Markup_Create(Markup endpoint)
 		{
 			var request = new RestRequest("/markups", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(endpoint);
@@ -242,7 +346,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Markup_Delete(Guid id)
+		
+	///<summary>
+	///Delete markup
+	///</summary>
+	public string Markup_Delete(Guid id)
 		{
 			var request = new RestRequest("/markups/{id}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -250,7 +358,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Markup Markup_Read(Guid id)
+		
+	///<summary>
+	///Read markup
+	///</summary>
+	public Markup Markup_Read(Guid id)
 		{
 			var request = new RestRequest("/markups/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -258,7 +370,11 @@ namespace Net.Sendvia
 			return Execute<Markup>(request).Data;
 		}
 
-		public string Markup_Update(Guid id, Markup endpoint)
+		
+	///<summary>
+	///Update markup
+	///</summary>
+	public string Markup_Update(Guid id, Markup endpoint)
 		{
 			var request = new RestRequest("/markups/{id}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -267,7 +383,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public List<Milestone> Parcel_GetTracking(Guid id)
+		
+	///<summary>
+	///Read parcel tracking milestones
+	///</summary>
+	public List<Milestone> Parcel_GetTracking(Guid id)
 		{
 			var request = new RestRequest("/parcels/{id}/milestones", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -275,7 +395,11 @@ namespace Net.Sendvia
 			return Execute<List<Milestone>>(request).Data;
 		}
 
-		public string Parcel_UpdateTracking(Guid id, List<Milestone> milestones)
+		
+	///<summary>
+	///Update parcel tracking milestones
+	///</summary>
+	public string Parcel_UpdateTracking(Guid id, List<Milestone> milestones)
 		{
 			var request = new RestRequest("/parcels/{id}/milestones", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -284,7 +408,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public List<Quote> Quote_ReadQuotes(Guid queryId)
+		
+	///<summary>
+	///Read quotes for an existing query
+	///</summary>
+	public List<Quote> Quote_ReadQuotes(Guid queryId)
 		{
 			var request = new RestRequest("/quotes", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddParameter("queryId", queryId.ToString());
@@ -292,7 +420,11 @@ namespace Net.Sendvia
 			return Execute<List<Quote>>(request).Data;
 		}
 
-		public Quote Quote_Create(Query query, List<Guid> serviceIds)
+		
+	///<summary>
+	///Get quotes for shipment query
+	///</summary>
+	public Quote Quote_Create(Query query, List<Guid> serviceIds)
 		{
 			var request = new RestRequest("/quotes", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(query);
@@ -307,7 +439,11 @@ namespace Net.Sendvia
 			return Execute<Quote>(request).Data;
 		}
 
-		public Quote Quote_Read(Guid id)
+		
+	///<summary>
+	///Read quote
+	///</summary>
+	public Quote Quote_Read(Guid id)
 		{
 			var request = new RestRequest("/quotes/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -315,7 +451,11 @@ namespace Net.Sendvia
 			return Execute<Quote>(request).Data;
 		}
 
-		public List<Rate> Rate_Read(Guid carrierId, Guid serviceId, Guid routeId)
+		
+	///<summary>
+	///Read rates for service route
+	///</summary>
+	public List<Rate> Rate_Read(Guid carrierId, Guid serviceId, Guid routeId)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{routeId}/rates", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -325,7 +465,11 @@ namespace Net.Sendvia
 			return Execute<List<Rate>>(request).Data;
 		}
 
-		public string Rate_Create(Guid carrierId, Guid serviceId, Guid routeId, List<Rate> rates)
+		
+	///<summary>
+	///Create rate for service route
+	///</summary>
+	public string Rate_Create(Guid carrierId, Guid serviceId, Guid routeId, List<Rate> rates)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{routeId}/rates", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -336,7 +480,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Rate_Delete(Guid carrierId, Guid serviceId, Guid routeId, Guid id)
+		
+	///<summary>
+	///Delete rate for service route
+	///</summary>
+	public string Rate_Delete(Guid carrierId, Guid serviceId, Guid routeId, Guid id)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{routeId}/rates/{id}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -347,7 +495,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Rate Rate_Read(Guid carrierId, Guid serviceId, Guid routeId, Guid id)
+		
+	///<summary>
+	///Read rate for service route
+	///</summary>
+	public Rate Rate_Read(Guid carrierId, Guid serviceId, Guid routeId, Guid id)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{routeId}/rates/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -358,7 +510,11 @@ namespace Net.Sendvia
 			return Execute<Rate>(request).Data;
 		}
 
-		public string Rate_Update(Guid carrierId, Guid serviceId, Guid routeId, Guid id, Rate rate)
+		
+	///<summary>
+	///Update rate for service route
+	///</summary>
+	public string Rate_Update(Guid carrierId, Guid serviceId, Guid routeId, Guid id, Rate rate)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{routeId}/rates/{id}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -370,7 +526,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Receipt Receipt_GetReceipt(Guid id)
+		
+	///<summary>
+	///Read receipt
+	///</summary>
+	public Receipt Receipt_GetReceipt(Guid id)
 		{
 			var request = new RestRequest("/receipts/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -378,7 +538,11 @@ namespace Net.Sendvia
 			return Execute<Receipt>(request).Data;
 		}
 
-		public byte[] Receipt_GetManifest(Guid id)
+		
+	///<summary>
+	///Get receipt manifest
+	///</summary>
+	public byte[] Receipt_GetManifest(Guid id)
 		{
 			var request = new RestRequest("/receipts/{id}/manifest", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -386,7 +550,11 @@ namespace Net.Sendvia
 			return Execute<List<byte>>(request).Data.ToArray();
 		}
 
-		public void Receipt_AddManifest(Guid id, Guid serviceId, byte[] pdf)
+		
+	///<summary>
+	///Create reciept manifest
+	///</summary>
+	public void Receipt_AddManifest(Guid id, Guid serviceId, byte[] pdf)
 		{
 			var request = new RestRequest("/receipts/{id}/manifest/{serviceId}", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -396,7 +564,11 @@ namespace Net.Sendvia
 			Execute(request);
 		}
 
-		public List<Route> Route_ReadAll(Guid carrierId, Guid serviceId)
+		
+	///<summary>
+	///Read all service routes
+	///</summary>
+	public List<Route> Route_ReadAll(Guid carrierId, Guid serviceId)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -405,7 +577,11 @@ namespace Net.Sendvia
 			return Execute<List<Route>>(request).Data;
 		}
 
-		public string Route_Create(Guid carrierId, Guid serviceId, Route route)
+		
+	///<summary>
+	///Create service route
+	///</summary>
+	public string Route_Create(Guid carrierId, Guid serviceId, Route route)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -415,7 +591,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Route_Delete(Guid carrierId, Guid serviceId, Guid id)
+		
+	///<summary>
+	///Delete service route
+	///</summary>
+	public string Route_Delete(Guid carrierId, Guid serviceId, Guid id)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{id}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -425,7 +605,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Route Route_Read(Guid carrierId, Guid serviceId, Guid id)
+		
+	///<summary>
+	///Read service route
+	///</summary>
+	public Route Route_Read(Guid carrierId, Guid serviceId, Guid id)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -435,7 +619,11 @@ namespace Net.Sendvia
 			return Execute<Route>(request).Data;
 		}
 
-		public string Route_Update(Guid carrierId, Guid serviceId, Guid id, Route route)
+		
+	///<summary>
+	///Update service route
+	///</summary>
+	public string Route_Update(Guid carrierId, Guid serviceId, Guid id, Route route)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/{id}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -446,7 +634,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Route_Union(Guid carrierId, Guid serviceId, List<Guid> guids)
+		
+	///<summary>
+	///Combine service routes
+	///</summary>
+	public string Route_Union(Guid carrierId, Guid serviceId, List<Guid> guids)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{serviceId}/routes/union", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -456,7 +648,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public List<Service> Service_Read(Guid carrierId)
+		
+	///<summary>
+	///Read all carrier services
+	///</summary>
+	public List<Service> Service_Read(Guid carrierId)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -464,7 +660,11 @@ namespace Net.Sendvia
 			return Execute<List<Service>>(request).Data;
 		}
 
-		public string Service_Create(Guid carrierId, Service service)
+		
+	///<summary>
+	///Create service
+	///</summary>
+	public string Service_Create(Guid carrierId, Service service)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -473,7 +673,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Service_Delete(Guid carrierId, Guid id)
+		
+	///<summary>
+	///Delete carrier service
+	///</summary>
+	public string Service_Delete(Guid carrierId, Guid id)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{id}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -482,7 +686,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Service Service_Read(Guid carrierId, Guid id)
+		
+	///<summary>
+	///Read carrier service
+	///</summary>
+	public Service Service_Read(Guid carrierId, Guid id)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -491,7 +699,11 @@ namespace Net.Sendvia
 			return Execute<Service>(request).Data;
 		}
 
-		public string Service_Update(Guid carrierId, Guid id, Service service)
+		
+	///<summary>
+	///Update carrier service
+	///</summary>
+	public string Service_Update(Guid carrierId, Guid id, Service service)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{id}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -501,7 +713,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Service_SetEndpoint(Guid carrierId, Guid id, Guid endpointId)
+		
+	///<summary>
+	///Assign endpoint to carrier service
+	///</summary>
+	public string Service_SetEndpoint(Guid carrierId, Guid id, Guid endpointId)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{id}/endpoint", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -511,7 +727,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public List<Setting> Service_ReadSettings(Guid carrierId, Guid id)
+		
+	///<summary>
+	///
+	///</summary>
+	public List<Setting> Service_ReadSettings(Guid carrierId, Guid id)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{id}/settings", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -520,7 +740,11 @@ namespace Net.Sendvia
 			return Execute<List<Setting>>(request).Data;
 		}
 
-		public string Service_PutSettings(Guid carrierId, Guid id, List<Setting> settings)
+		
+	///<summary>
+	///
+	///</summary>
+	public string Service_PutSettings(Guid carrierId, Guid id, List<Setting> settings)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{id}/settings", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -530,7 +754,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Service_DeleteSettings(Guid carrierId, Guid id, string key)
+		
+	///<summary>
+	///
+	///</summary>
+	public string Service_DeleteSettings(Guid carrierId, Guid id, string key)
 		{
 			var request = new RestRequest("/carriers/{carrierId}/services/{id}/settings/{key}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("carrierId", carrierId.ToString());
@@ -540,7 +768,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Shipment_Create(Shipment endpoint)
+		
+	///<summary>
+	///Create shipment
+	///</summary>
+	public string Shipment_Create(Shipment endpoint)
 		{
 			var request = new RestRequest("/shipments", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(endpoint);
@@ -548,7 +780,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public string Shipment_Delete(Guid id)
+		
+	///<summary>
+	///Delete shipment
+	///</summary>
+	public string Shipment_Delete(Guid id)
 		{
 			var request = new RestRequest("/shipments/{id}", Method.DELETE){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -556,7 +792,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Shipment Shipment_Read(Guid id)
+		
+	///<summary>
+	///Read shipment
+	///</summary>
+	public Shipment Shipment_Read(Guid id)
 		{
 			var request = new RestRequest("/shipments/{id}", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -564,7 +804,11 @@ namespace Net.Sendvia
 			return Execute<Shipment>(request).Data;
 		}
 
-		public string Shipment_Update(Guid id, Shipment endpoint)
+		
+	///<summary>
+	///Update shipment
+	///</summary>
+	public string Shipment_Update(Guid id, Shipment endpoint)
 		{
 			var request = new RestRequest("/shipments/{id}", Method.PUT){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -573,7 +817,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public List<Status> Shipment_ReadAlerts(Guid id)
+		
+	///<summary>
+	///Read shipment alerts
+	///</summary>
+	public List<Status> Shipment_ReadAlerts(Guid id)
 		{
 			var request = new RestRequest("/shipments/{id}/alerts", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -581,7 +829,11 @@ namespace Net.Sendvia
 			return Execute<List<Status>>(request).Data;
 		}
 
-		public string Shipment_AddAlert(Guid id, Status alert)
+		
+	///<summary>
+	///Create shipment alert
+	///</summary>
+	public string Shipment_AddAlert(Guid id, Status alert)
 		{
 			var request = new RestRequest("/shipments/{id}/alerts", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -590,7 +842,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Pdf Shipment_ReadLabel(Guid id)
+		
+	///<summary>
+	///Read shipment label
+	///</summary>
+	public Pdf Shipment_ReadLabel(Guid id)
 		{
 			var request = new RestRequest("/shipments/{id}/label", Method.GET){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -598,7 +854,11 @@ namespace Net.Sendvia
 			return Execute<Pdf>(request).Data;
 		}
 
-		public string Shipment_AddLabel(Guid id, Pdf label)
+		
+	///<summary>
+	///
+	///</summary>
+	public string Shipment_AddLabel(Guid id, Pdf label)
 		{
 			var request = new RestRequest("/shipments/{id}/label", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddUrlSegment("id", id.ToString());
@@ -607,7 +867,11 @@ namespace Net.Sendvia
 			return Execute(request).Content;
 		}
 
-		public Pdf Shipment_ReadLabels(GuidArray shipmentIds)
+		
+	///<summary>
+	///
+	///</summary>
+	public Pdf Shipment_ReadLabels(GuidArray shipmentIds)
 		{
 			var request = new RestRequest("/shipments/labels", Method.POST){ RequestFormat = DataFormat.Json };
 				request.AddBody(shipmentIds);
@@ -615,7 +879,11 @@ namespace Net.Sendvia
 			return Execute<Pdf>(request).Data;
 		}
 
-		public List<Status> Shipment_ReadStatus()
+		
+	///<summary>
+	///Read alerts for all shipments
+	///</summary>
+	public List<Status> Shipment_ReadStatus()
 		{
 			var request = new RestRequest("/shipments/status", Method.GET){ RequestFormat = DataFormat.Json };
 			

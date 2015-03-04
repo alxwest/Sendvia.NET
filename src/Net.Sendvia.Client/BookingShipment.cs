@@ -9,11 +9,20 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Booking shipment details.
+	///</summary>
 	public partial class BookingShipment
 	{
+		///<summary>
+		///Shipment details
+		///</summary>
 		public virtual Shipment Shipment
 		{get;set;}
 	
+		///<summary>
+		///ID of service that this shipment will use
+		///</summary>
 		public virtual Guid? ServiceId
 		{get;set;}
 	

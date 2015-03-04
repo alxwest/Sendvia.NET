@@ -9,17 +9,32 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Shipping quote
+	///</summary>
 	public partial class Quote
 	{
+		///<summary>
+		///Quote ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///ID of query used to retrieve this quote
+		///</summary>
 		public virtual Guid? QueryId
 		{get;set;}
 	
+		///<summary>
+		///Currency in ISO 4217 Code N
+		///</summary>
 		public virtual int Currency
 		{get;set;}
 	
+		///<summary>
+		///Quote shipment details
+		///</summary>
 		public virtual List<QuoteShipment> QuoteShipments
 		{get;set;}
 	

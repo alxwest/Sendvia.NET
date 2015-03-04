@@ -9,20 +9,38 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Area details.
+	///</summary>
 	public partial class Area
 	{
+		///<summary>
+		///Area ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Area name
+		///</summary>
 		public virtual string Name
 		{get;set;}
 	
+		///<summary>
+		///Area description
+		///</summary>
 		public virtual string Description
 		{get;set;}
 	
+		///<summary>
+		///Area boundary
+		///</summary>
 		public virtual string Boundary
 		{get;set;}
 	
+		///<summary>
+		///Format: KML, GML or WKT
+		///</summary>
 		public virtual string Format
 		{get;set;}
 	

@@ -9,29 +9,56 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Shipment parcel details.
+	///</summary>
 	public partial class Parcel
 	{
+		///<summary>
+		///Parcel ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Parcel reference
+		///</summary>
 		public virtual string Reference
 		{get;set;}
 	
+		///<summary>
+		///Parcel weight in grams
+		///</summary>
 		public virtual int Weight
 		{get;set;}
 	
+		///<summary>
+		///Parcel size
+		///</summary>
 		public virtual Dimension Size
 		{get;set;}
 	
+		///<summary>
+		///Please see https://www.gov.uk/finding-commodity-codes for the corresponding commodity code
+		///</summary>
 		public virtual int CommodityCode
 		{get;set;}
 	
+		///<summary>
+		///description of parcel contents
+		///</summary>
 		public virtual string Description
 		{get;set;}
 	
+		///<summary>
+		///Parcel value (*.00)
+		///</summary>
 		public virtual decimal Value
 		{get;set;}
 	
+		///<summary>
+		///Currency in ISO 4217 Code N
+		///</summary>
 		public virtual int Currency
 		{get;set;}
 	

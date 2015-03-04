@@ -9,14 +9,26 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///
+	///</summary>
 	public partial class Setting
 	{
+		///<summary>
+		///
+		///</summary>
 		public virtual string Key
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Value
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string RegEx
 		{get;set;}
 	

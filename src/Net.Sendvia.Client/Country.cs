@@ -9,11 +9,20 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Country details.
+	///</summary>
 	public partial class Country
 	{
+		///<summary>
+		///Country ISO
+		///</summary>
 		public virtual int Iso
 		{get;set;}
 	
+		///<summary>
+		///Country name
+		///</summary>
 		public virtual string Name
 		{get;set;}
 	

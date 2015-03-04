@@ -9,17 +9,32 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Cost markup details.
+	///</summary>
 	public partial class Markup
 	{
+		///<summary>
+		///Markup ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Figure to multiply the quoted cost by (Markup percent)
+		///</summary>
 		public virtual decimal Decimal
 		{get;set;}
 	
+		///<summary>
+		///Figure to add to the quoted cost
+		///</summary>
 		public virtual decimal Amount
 		{get;set;}
 	
+		///<summary>
+		///Currency in ISO 4217 Code N
+		///</summary>
 		public virtual int Currency
 		{get;set;}
 	

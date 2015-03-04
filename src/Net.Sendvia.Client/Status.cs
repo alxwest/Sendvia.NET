@@ -9,17 +9,32 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Status details.
+	///</summary>
 	public partial class Status
 	{
+		///<summary>
+		///Status ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Status type
+		///</summary>
 		public virtual string Type
 		{get;set;}
 	
+		///<summary>
+		///Date of status
+		///</summary>
 		public virtual DateTime? Date
 		{get;set;}
 	
+		///<summary>
+		///Status message
+		///</summary>
 		public virtual string Message
 		{get;set;}
 	

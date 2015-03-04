@@ -9,8 +9,14 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///
+	///</summary>
 	public partial class Pdf
 	{
+		///<summary>
+		///
+		///</summary>
 		public virtual byte[] Data
 		{get;set;}
 	

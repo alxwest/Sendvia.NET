@@ -9,20 +9,38 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Delivery milestone
+	///</summary>
 	public partial class Milestone
 	{
+		///<summary>
+		///Country in which the milestone occurred
+		///</summary>
 		public virtual int CountryIso
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Type
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual DateTime? Date
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Message
 		{get;set;}
 	

@@ -9,17 +9,32 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Individual receipt item.
+	///</summary>
 	public partial class ReceiptItem
 	{
+		///<summary>
+		///ID of associated shipment
+		///</summary>
 		public virtual Guid? ShipmentId
 		{get;set;}
 	
+		///<summary>
+		///Cost of receipt item (*.00)
+		///</summary>
 		public virtual decimal Cost
 		{get;set;}
 	
+		///<summary>
+		///Reciept item service details
+		///</summary>
 		public virtual Service Service
 		{get;set;}
 	
+		///<summary>
+		///Inclusive of VAT
+		///</summary>
 		public virtual bool Vat
 		{get;set;}
 	

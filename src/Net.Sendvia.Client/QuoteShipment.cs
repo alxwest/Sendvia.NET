@@ -9,26 +9,50 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Quote shipment details
+	///</summary>
 	public partial class QuoteShipment
 	{
+		///<summary>
+		///ID of shipment associated with this quote
+		///</summary>
 		public virtual Guid? ShipmentId
 		{get;set;}
 	
+		///<summary>
+		///Quoted cost of shipment (*.00)
+		///</summary>
 		public virtual decimal Cost
 		{get;set;}
 	
+		///<summary>
+		///Surcharge (*.00)
+		///</summary>
 		public virtual decimal Surcharge
 		{get;set;}
 	
+		///<summary>
+		///Date and time of earliest collection
+		///</summary>
 		public virtual DateTime? EarliestCollection
 		{get;set;}
 	
+		///<summary>
+		///Details of service to be used for this shipment
+		///</summary>
 		public virtual Service Service
 		{get;set;}
 	
+		///<summary>
+		///Details of carrier to be used for this shipment
+		///</summary>
 		public virtual Carrier Carrier
 		{get;set;}
 	
+		///<summary>
+		///Whether quote includes VAT
+		///</summary>
 		public virtual bool Vat
 		{get;set;}
 	

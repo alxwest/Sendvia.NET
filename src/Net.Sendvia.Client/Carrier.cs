@@ -9,20 +9,38 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Carrier details.
+	///</summary>
 	public partial class Carrier
 	{
+		///<summary>
+		///Carrier ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Carrier name
+		///</summary>
 		public virtual string Name
 		{get;set;}
 	
+		///<summary>
+		///Whether the carrier is private
+		///</summary>
 		public virtual bool Private
 		{get;set;}
 	
+		///<summary>
+		///Whether the carrier is editable by the current user
+		///</summary>
 		public virtual bool Editable
 		{get;set;}
 	
+		///<summary>
+		///Services that this carrier provides
+		///</summary>
 		public virtual List<Service> Services
 		{get;set;}
 	

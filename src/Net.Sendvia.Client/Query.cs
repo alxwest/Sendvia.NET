@@ -9,14 +9,26 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Query used to retrieve quotes.
+	///</summary>
 	public partial class Query
 	{
+		///<summary>
+		///Query ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Currency in ISO 4217 Code N
+		///</summary>
 		public virtual int Currency
 		{get;set;}
 	
+		///<summary>
+		///Shipments to retrieve quotes for
+		///</summary>
 		public virtual List<Shipment> Shipments
 		{get;set;}
 	

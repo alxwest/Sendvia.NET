@@ -9,8 +9,14 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///
+	///</summary>
 	public partial class GuidArray
 	{
+		///<summary>
+		///
+		///</summary>
 		public virtual List<Guid> Ids
 		{get;set;}
 	

@@ -9,32 +9,62 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Shipment details.
+	///</summary>
 	public partial class Shipment
 	{
+		///<summary>
+		///Shipment ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Contact details for shipment sender
+		///</summary>
 		public virtual Contact Sender
 		{get;set;}
 	
+		///<summary>
+		///Contact details for shipment recipient
+		///</summary>
 		public virtual Contact Recipient
 		{get;set;}
 	
+		///<summary>
+		///Parcels included within this shipment
+		///</summary>
 		public virtual List<Parcel> Parcels
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Reference
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual DateTime? Collection
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Instructions
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual bool Insured
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual DateTime? Cancelled
 		{get;set;}
 	

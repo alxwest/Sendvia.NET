@@ -9,59 +9,116 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Rate details.
+	///</summary>
 	public partial class Rate
 	{
+		///<summary>
+		///Rate ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Date that this rate is available from (ISO 8601 UTC)
+		///</summary>
 		public virtual DateTime? Start
 		{get;set;}
 	
+		///<summary>
+		///Date that this rate becomes unavailable (ISO 8601 UTC)
+		///</summary>
 		public virtual DateTime? End
 		{get;set;}
 	
+		///<summary>
+		///Minimum weight (in grams) required to use this rate
+		///</summary>
 		public virtual int MinWeight
 		{get;set;}
 	
+		///<summary>
+		///Maximum weight (in grams) required to use this rate
+		///</summary>
 		public virtual int MaxWeight
 		{get;set;}
 	
+		///<summary>
+		///Minimum volume (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MinVolume
 		{get;set;}
 	
+		///<summary>
+		///Maximum volume (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MaxVolume
 		{get;set;}
 	
+		///<summary>
+		///Minimum length (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MinLength
 		{get;set;}
 	
+		///<summary>
+		///Maximum length (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MaxLength
 		{get;set;}
 	
+		///<summary>
+		///Minimum width (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MinWidth
 		{get;set;}
 	
+		///<summary>
+		///Maximum width (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MaxWidth
 		{get;set;}
 	
+		///<summary>
+		///Minimum height (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MinHeight
 		{get;set;}
 	
+		///<summary>
+		///Maximum height (in millimeters) required to use this rate
+		///</summary>
 		public virtual int MaxHeight
 		{get;set;}
 	
+		///<summary>
+		///Minimum quantity required to use this rate
+		///</summary>
 		public virtual int MinQuantity
 		{get;set;}
 	
+		///<summary>
+		///Maximum quantity required to use this rate
+		///</summary>
 		public virtual int MaxQuantity
 		{get;set;}
 	
+		///<summary>
+		///Rate per kilo/gram
+		///</summary>
 		public virtual decimal WeightRate
 		{get;set;}
 	
+		///<summary>
+		///Rate per item
+		///</summary>
 		public virtual decimal ItemRate
 		{get;set;}
 	
+		///<summary>
+		///Currency in ISO 4217 Code N
+		///</summary>
 		public virtual int Currency
 		{get;set;}
 	

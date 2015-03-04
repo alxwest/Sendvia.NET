@@ -9,20 +9,38 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Booking details.
+	///</summary>
 	public partial class Booking
 	{
+		///<summary>
+		///Booking ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Provide if booking is based on a previous quote
+		///</summary>
 		public virtual Guid? QuoteId
 		{get;set;}
 	
+		///<summary>
+		///1:PayPal, 2:Payment Order, 3:Invoice
+		///</summary>
 		public virtual string PaymentMethod
 		{get;set;}
 	
+		///<summary>
+		///Currency in ISO 4217 Code N
+		///</summary>
 		public virtual int Currency
 		{get;set;}
 	
+		///<summary>
+		///Shipments associated with this booking
+		///</summary>
 		public virtual List<BookingShipment> BookingShipments
 		{get;set;}
 	

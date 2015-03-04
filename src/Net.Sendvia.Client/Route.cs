@@ -9,23 +9,44 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Route details.
+	///</summary>
 	public partial class Route
 	{
+		///<summary>
+		///Route ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Route origin
+		///</summary>
 		public virtual Area Origin
 		{get;set;}
 	
+		///<summary>
+		///Route destination
+		///</summary>
 		public virtual Area Destination
 		{get;set;}
 	
+		///<summary>
+		///Minimum days for delivery
+		///</summary>
 		public virtual int MinDays
 		{get;set;}
 	
+		///<summary>
+		///Maximum days for delivery
+		///</summary>
 		public virtual int MaxDays
 		{get;set;}
 	
+		///<summary>
+		///Hours required before earliest collcetion (e.g. 24 hours)
+		///</summary>
 		public virtual int CollectionTime
 		{get;set;}
 	

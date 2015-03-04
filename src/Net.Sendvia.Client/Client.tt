@@ -102,6 +102,9 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///<#=objectModel.description==null?"":objectModel.description#>
+	///</summary>
 	public partial class <#=objectModel.id #>
 	{<#+
 
@@ -192,6 +195,9 @@ public void WriteProperty(dynamic prop, string name)
 {
 	#>
 
+		///<summary>
+		///<#=prop.description==null?"":prop.description#>
+		///</summary>
 		public virtual <#=GetTypeString(prop)#> <#=name#>
 		{get;set;}
 	<#+
@@ -201,7 +207,11 @@ public void WriteOperation(dynamic op, string path)
 {
 	var rType = GetTypeString(op);	
 
-#>		public <#=rType#> <#=op.nickname#>(<#+
+#>		
+	///<summary>
+	///<#=op.summary==null?"":op.summary#>
+	///</summary>
+	public <#=rType#> <#=op.nickname#>(<#+
 	string comma = "";
 	foreach(var param in op.parameters)
 	{

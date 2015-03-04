@@ -9,29 +9,56 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Contact information
+	///</summary>
 	public partial class Contact
 	{
+		///<summary>
+		///Contact ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///Contact's address
+		///</summary>
 		public virtual Address Address
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string FirstName
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string MiddleNames
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Surname
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string PhoneNumber
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string MobileNumber
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Email
 		{get;set;}
 	

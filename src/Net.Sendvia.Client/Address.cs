@@ -9,47 +9,92 @@ using System.Collections.Generic;
 
 namespace Net.Sendvia.Models
 {
+	///<summary>
+	///Address details.
+	///</summary>
 	public partial class Address
 	{
+		///<summary>
+		///Address ID
+		///</summary>
 		public virtual Guid? Id
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Company
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Department
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Floor
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string StreetNumber
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string BuildingName
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string BoxNumber
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Street
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Locality
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string City
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string GoverningDistrict
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string PostalArea
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual string Country
 		{get;set;}
 	
+		///<summary>
+		///
+		///</summary>
 		public virtual int CountryIso
 		{get;set;}
 	
