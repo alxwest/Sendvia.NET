@@ -11,7 +11,7 @@ namespace Net.Sendvia.Models
 {
 	public partial class GuidArray
 	{
-		public List<Guid> Ids
+		public virtual List<Guid> Ids
 		{get;set;}
 	
 	}

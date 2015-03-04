@@ -11,13 +11,13 @@ namespace Net.Sendvia.Models
 {
 	public partial class Setting
 	{
-		public string Key
+		public virtual string Key
 		{get;set;}
 	
-		public string Value
+		public virtual string Value
 		{get;set;}
 	
-		public string RegEx
+		public virtual string RegEx
 		{get;set;}
 	
 	}
